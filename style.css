@@ -799,7 +799,6 @@ pre, code, table {
   transition: all var(--transition-base);
   display: flex;
   flex-direction: column;
-  height: 100%;
   position: relative;
   overflow: hidden;
   border: 1px solid var(--color-border);

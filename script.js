@@ -239,7 +239,7 @@
     var currentPath = window.location.pathname;
     var navLinks = document.querySelectorAll('.c-nav__link, .nav-link');
 
-    var normalizedPath = currentPath.replace(//index.html$/, '/');
+    var normalizedPath = currentPath.replace(/\/index.html$/, '/');
     if (normalizedPath === '') normalizedPath = '/';
 
     for (var i = 0; i < navLinks.length; i++) {
@@ -248,7 +248,7 @@
 
       if (!linkPath || linkPath.startsWith('#')) continue;
 
-      var normalizedLink = linkPath.replace(//index.html$/, '/');
+      var normalizedLink = linkPath.replace(/\/index.html$/, '/');
 
       link.removeAttribute('aria-current');
       link.classList.remove('active', 'is-active');
@@ -393,7 +393,7 @@
       if (!email.value.trim()) {
         showError(email, 'E-mail is verplicht.');
         errors.push('email');
-      } else if (!/^[^s@]+@[^s@]+.[^s@]+$/.test(email.value.trim())) {
+      } else if (!/^[^s@]+@[^s@]+\.[^s@]+$/.test(email.value.trim())) {
         showError(email, 'Voer een geldig e-mailadres in.');
         errors.push('email');
       }
@@ -401,7 +401,7 @@
       if (!phone.value.trim()) {
         showError(phone, 'Telefoonnummer is verplicht.');
         errors.push('phone');
-      } else if (!/^[ds+-()]{10,20}$/.test(phone.value.trim())) {
+      } else if (!/^[ds+\-()]{10,20}$/.test(phone.value.trim())) {
         showError(phone, 'Voer een geldig telefoonnummer in (10-20 tekens).');
         errors.push('phone');
       }
